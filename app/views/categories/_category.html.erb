@@ -1,0 +1,4 @@
+ <%= form_for @category do |f|%>
+     <li><%= f.label :name, category.name %>
+     <%= link_to "(remove)", category, method: :delete, data:{confirm: "Are you sure?"}, remote: true %></li>
+ <% end %>

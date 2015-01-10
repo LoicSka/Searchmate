@@ -1,0 +1,16 @@
+<div id="categ" class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="well well-lg">
+      <p><%= link_to "New Category", new_category_path, id: "new_link", class: "btn btn-success", remote: true %></p>
+      <h2>Categories</h2>
+      <ul>
+      <div class="cat", id="new_cat">
+          <% @categories.each do |category| %>
+            <li><%= category.name %>
+             <%= link_to "(remove)",category, method: :delete, data:{confirm: "Are you sure?"} %></li>
+          <% end %>
+      </div>
+      </ul>
+    </div>
+  </div>
+</div>

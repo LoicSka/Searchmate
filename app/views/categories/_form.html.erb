@@ -1,0 +1,11 @@
+  <div id="field" class="row">
+    <div class="col-lg-6">
+      <div class="input-group">
+        <%= form_for(@category, remote: true, :url => {:action => 'create'}) do |f|%>
+           <%= f.text_field :name, class: "form-control" %>
+            <span class="input-group-btn">
+           <%= submit_tag("Create", class: "btn btn-default") %>
+           </span>
+    <% end %>
+  </div>
+</div>

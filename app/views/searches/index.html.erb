@@ -1,0 +1,28 @@
+<nav id="mainav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">SearchMate <i class="fa fa-search"></i></a>
+    </div>
+    <div class="collapse navbar-collapse" id="col">
+       <%= form_for(:search, remote: true, html: {class: 'navbar-form navbar-left'} ,:url => {:action => 'create'}) do |f| %>
+          <%= f.collection_select :category_id, Category.order(:name), :id, :name, {}, {multiple: false} %>
+          <div class="input-group">
+             <%= f.text_field :title, class: "form-control", placeholder: "Find..." %> 
+             <span class="input-group-btn">
+             <%= f.submit("Search", class: "btn btn-success") %>
+             </span>
+          </div>
+          <% end %>
+      </div>
+  </div>
+</nav>
+<div id="load" class="row">
+  <i id="spin" class="fa fa-spinner fa-2x fa-spin"></i>
+  <div class="col-md-8 col-md-offset-2">
+    <div id="hidn" class="well">
+      <a id="res" href="#"></a>
+    </div>
+  </div>
+</div>
+
+
